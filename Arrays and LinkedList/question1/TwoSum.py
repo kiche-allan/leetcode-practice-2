@@ -17,14 +17,18 @@ class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         
     #create a dictionary to store the indices of the elements in the array
-    indices = {}
+        indices = {}
     #this creates an empty dictionary called indices which will be used to store the indices of the elements in the array
     
     #we then reiterate through the array
     #thi starts for a loop that iterates troough the elemenets in the 'nums' array. The enumerate function adds a counter to the loo[ so that the index of each element can be accessed. The loop variables 'i' and 'num' represent the index and value of the current element, respectively. 
-    for i, num in enumerate(nums):
+        for i, num in enumerate(nums):
         #next is to check if the target - nums in in the dictionary, it means that there is no element in the array that, when added to the current element, sums up to the target. In tis case, the current element and its index are added to the 'indices' dictionary
-        indices[num] = i
+            if target - num in indices:
+            
+                return [indices[target -num], i]
+            
+            indices[num] = i
       #next is to return an empty list  
         return []
         
